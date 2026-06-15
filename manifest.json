@@ -10,7 +10,11 @@
 
   "browser_specific_settings": {
     "gecko": {
-      "id": "liquid-forest-newtab@yourname"
+      "id": "liquid-forest-newtab@halo"
     }
+  },
+
+  "data_collection_permissions": {
+    "required": false
   }
 }
