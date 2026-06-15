@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>New Tab</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>New Tab</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="background"></div>
+<div class="overlay"></div>
 
 <div class="glass">
     <div id="clock">00:00:00</div>
 
     <form id="searchForm">
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="Search Google..."
-            autocomplete="off"
-        >
+        <input type="text" id="searchInput" placeholder="Search Google...">
     </form>
+
+    <div class="links">
+        <a href="https://youtube.com">YouTube</a>
+        <a href="https://github.com">GitHub</a>
+        <a href="https://discord.com/app">Discord</a>
+        <a href="https://roblox.com">Roblox</a>
+    </div>
 </div>
 
 <script src="script.js"></script>
