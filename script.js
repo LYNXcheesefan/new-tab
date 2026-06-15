@@ -1,27 +1,40 @@
+// ⏰ Live clock
 function updateClock() {
+    const clock = document.getElementById("clock");
+    if (!clock) return;
+
     const now = new Date();
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
 
-    const h = String(now.getHours()).padStart(2,'0');
-    const m = String(now.getMinutes()).padStart(2,'0');
-    const s = String(now.getSeconds()).padStart(2,'0');
+    hours = String(hours).padStart(2, "0");
+    minutes = String(minutes).padStart(2, "0");
+    seconds = String(seconds).padStart(2, "0");
 
-    document.getElementById("clock").textContent =
-        `${h}:${m}:${s}`;
+    clock.textContent = `${hours}:${minutes}:${seconds}`;
 }
 
-setInterval(updateClock,1000);
+setInterval(updateClock, 1000);
 updateClock();
 
-document.getElementById("searchForm")
-.addEventListener("submit",e=>{
-    e.preventDefault();
 
-    const q =
-        document.getElementById("searchInput").value;
+// 🔍 Search (Google search on Enter)
+const searchInput = document.getElementById("searchInput");
 
-    if(q.trim()){
-        location.href =
-            "https://www.google.com/search?q=" +
-            encodeURIComponent(q);
-    }
-});
+if (searchInput) {
+    searchInput.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+            const query = searchInput.value.trim();
+            if (query) {
+                window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+            }
+        }
+    });
+}
+
+
+// 🔗 Optional: quick function for Discord button
+function openDiscord() {
+    window.open("https://discord.com/channels/@me", "_blank");
+}
