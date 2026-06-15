@@ -1,15 +1,97 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My New Tab</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Welcome!</h1>
-    <p>Have a great day.</p>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Tab</title>
 
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    background-image:url("https://images.unsplash.com/photo-1506744038136-46273834b3fb");
+    background-size:cover;
+    background-position:center;
+}
+
+.glass{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:25px;
+
+    padding:30px;
+    width:600px;
+    text-align:center;
+
+    box-shadow:0 8px 32px rgba(0,0,0,.25);
+}
+
+#clock{
+    color:white;
+    font-size:64px;
+    margin-bottom:20px;
+}
+
+.search{
+    width:100%;
+    padding:16px;
+
+    border:none;
+    border-radius:15px;
+
+    background:rgba(255,255,255,.2);
+    color:white;
+    font-size:18px;
+
+    outline:none;
+}
+
+.search::placeholder{
+    color:rgba(255,255,255,.8);
+}
+</style>
+</head>
+
+<body>
+
+<div class="glass">
     <div id="clock"></div>
 
-    <script src="script.js"></script>
+    <form action="https://www.google.com/search">
+        <input
+            class="search"
+            name="q"
+            placeholder="Search Google..."
+            autocomplete="off">
+    </form>
+</div>
+
+<script>
+function updateClock(){
+    document.getElementById("clock").innerHTML =
+        new Date().toLocaleTimeString([],{
+            hour:'2-digit',
+            minute:'2-digit'
+        });
+}
+
+updateClock();
+setInterval(updateClock,1000);
+</script>
+
 </body>
 </html>
