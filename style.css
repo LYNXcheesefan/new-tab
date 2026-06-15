@@ -1,9 +1,11 @@
 body {
-    background: #121212;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin-top: 100px;
+    background-size: cover;
+    animation: zoom 20s infinite alternate ease-in-out;
+}
+
+@keyframes zoom {
+    from { background-size: 100%; }
+    to { background-size: 110%; }
 }
 
 #clock {
