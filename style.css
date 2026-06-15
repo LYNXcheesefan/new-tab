@@ -1,4 +1,27 @@
 body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(120deg, #1e1e2f, #2b5876);
+  font-family: sans-serif;
+  color: white;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+#clock {
+  font-size: 70px;
+  font-weight: bold;
+}body {
     background-size: cover;
     animation: zoom 20s infinite alternate ease-in-out;
 }
