@@ -1,19 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>New Tab</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Tab</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <div class="container">
-    <h1>Welcome</h1>
-    <div id="clock"></div>
-  </div>
+<div class="background"></div>
 
-  <script src="script.js"></script>
+<div class="glass">
+    <div id="clock">00:00:00</div>
+
+    <form id="searchForm">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search Google..."
+            autocomplete="off"
+        >
+    </form>
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
