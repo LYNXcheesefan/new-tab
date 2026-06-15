@@ -1,26 +1,102 @@
-#searchForm {
-    width: 100%;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:sans-serif;
 }
 
-#searchInput {
-    width: 100%;
-    padding: 14px 18px;
-    font-size: 18px;
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
 
-    border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 16px;
-
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(20px);
-
-    color: white;
-    box-sizing: border-box;
+    background-image:url("https://images.unsplash.com/photo-1506744038136-46273834b3fb");
+    background-size:cover;
+    background-position:center;
 }
 
-#searchInput::placeholder {
-    color: rgba(255,255,255,0.7);
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.25);
 }
 
-#searchInput:focus {
-    outline: none;
+.glass{
+    width:550px;
+    padding:35px;
+
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:28px;
+
+    box-shadow:0 8px 32px rgba(0,0,0,.3);
+
+    text-align:center;
+    color:white;
+
+    animation:float 5s ease-in-out infinite;
+
+    z-index:1;
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+#clock{
+    font-size:64px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+#searchInput{
+    width:100%;
+    padding:15px;
+
+    border:none;
+    outline:none;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.15);
+    color:white;
+    font-size:18px;
+}
+
+#searchInput::placeholder{
+    color:rgba(255,255,255,.8);
+}
+
+.links{
+    margin-top:25px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.links a{
+    text-decoration:none;
+    color:white;
+
+    background:rgba(255,255,255,.12);
+
+    padding:12px;
+    border-radius:14px;
+
+    transition:.2s;
+}
+
+.links a:hover{
+    transform:translateY(-3px);
+    background:rgba(255,255,255,.2);
 }
