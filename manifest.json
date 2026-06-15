@@ -1,9 +1,16 @@
 {
   "manifest_version": 3,
-  "name": "My New Tab",
+  "name": "Liquid Forest New Tab",
   "version": "1.0",
-  "description": "Custom new tab page",
+  "description": "Custom new tab with forest background",
+
   "chrome_url_overrides": {
-    "newtab": "index.html"
+    "newtab": "newtab.html"
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "liquid-forest-newtab@yourname"
+    }
   }
 }
