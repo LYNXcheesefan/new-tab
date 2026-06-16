@@ -20,18 +20,16 @@ updateClock();
 
 
 // 🔍 Search (Google search on Enter)
-const searchInput = document.getElementById("searchInput");
+cconst searchInput = document.getElementById("searchInput");
 
-if (searchInput) {
-    searchInput.addEventListener("keydown", function (e) {
-        if (e.key === "Enter") {
-            const query = searchInput.value.trim();
-            if (query) {
-                window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-            }
+searchInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+        const query = searchInput.value.trim();
+        if (query) {
+            window.location.href = "https://www.google.com/search?q=" + encodeURIComponent(query);
         }
-    });
-}
+    }
+});
 
 
 // 🔗 Optional: quick function for Discord button
